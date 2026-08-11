@@ -1,0 +1,16 @@
+[project]
+name = "project-8-web"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.141.1",
+]
+
+[project.scripts]
+project-8-web = "project_8_web:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
