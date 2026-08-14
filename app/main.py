@@ -5,3 +5,6 @@ app = FastAPI()
 
 app.include_router(api_router, prefix="/api/v1")
 
+@app.get("/about")
+def get():
+   return{"say" : "hai bro"}

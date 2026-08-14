@@ -24,5 +24,5 @@ def decode(token):
         )
         return decode_token
     
-    except jwt.PyJWKError:
+    except jwt.InvalidTokenError:
         raise HTTPException(status_code=401, detail="invalid token")
