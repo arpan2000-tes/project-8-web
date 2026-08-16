@@ -1,0 +1,407 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@10.9.1
+2 info using node@v22.23.2
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/public/frontend/.npmrc
+5 silly config load:file:/home/.npmrc
+6 silly config load:file:/etc/npmrc
+7 verbose title npm install @tailwindcss/postcss
+8 verbose argv "install" "--save-dev" "@tailwindcss/postcss"
+9 verbose logfile logs-max:10 dir:/home/.npm/_logs/2026-08-16T00_52_15_004Z-
+10 verbose logfile /home/.npm/_logs/2026-08-16T00_52_15_004Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 silly logfile done cleaning log files
+14 silly idealTree buildDeps
+15 silly fetch manifest @tailwindcss/postcss@*
+16 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2fpostcss cache-miss
+17 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+18 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2fpostcss 1247ms (cache miss)
+19 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2fpostcss set size:undefined disposed:false
+20 silly placeDep ROOT @tailwindcss/postcss@4.3.3 OK for: frontend@0.0.0 want: *
+21 silly fetch manifest @alloc/quick-lru@^5.2.0
+22 silly packumentCache full:https://registry.npmjs.org/@alloc%2fquick-lru cache-miss
+23 http fetch GET 200 https://registry.npmjs.org/@alloc%2fquick-lru 126ms (cache miss)
+24 silly packumentCache full:https://registry.npmjs.org/@alloc%2fquick-lru set size:undefined disposed:false
+25 silly placeDep ROOT @alloc/quick-lru@5.2.0 OK for: @tailwindcss/postcss@4.3.3 want: ^5.2.0
+26 silly reify moves {}
+27 verbose reify failed optional dependency /public/frontend/node_modules/@tailwindcss/oxide-wasm32-wasi
+28 silly reify mark deleted [ '/public/frontend/node_modules/@tailwindcss/oxide-wasm32-wasi' ]
+29 silly audit bulk request {
+29 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+29 silly audit   '@jridgewell/remapping': [ '2.3.5' ],
+29 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+29 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+29 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+29 silly audit   '@oxc-project/types': [ '0.144.0' ],
+29 silly audit   '@oxlint/binding-android-arm-eabi': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-android-arm64': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-darwin-arm64': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-darwin-x64': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-freebsd-x64': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-linux-arm-gnueabihf': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-linux-arm-musleabihf': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-linux-arm64-gnu': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-linux-arm64-musl': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-linux-ppc64-gnu': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-linux-riscv64-gnu': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-linux-riscv64-musl': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-linux-s390x-gnu': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-linux-x64-gnu': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-linux-x64-musl': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-openharmony-arm64': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-win32-arm64-msvc': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-win32-ia32-msvc': [ '1.78.0' ],
+29 silly audit   '@oxlint/binding-win32-x64-msvc': [ '1.78.0' ],
+29 silly audit   '@parcel/watcher': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-android-arm64': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-darwin-arm64': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-darwin-x64': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-freebsd-x64': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-linux-arm-glibc': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-linux-arm-musl': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-linux-arm64-glibc': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-linux-arm64-musl': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-linux-x64-glibc': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-linux-x64-musl': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-win32-arm64': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-win32-ia32': [ '2.5.1' ],
+29 silly audit   '@parcel/watcher-win32-x64': [ '2.5.1' ],
+29 silly audit   '@rolldown/binding-android-arm64': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-darwin-arm64': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-darwin-x64': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-freebsd-x64': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-linux-arm-gnueabihf': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-linux-arm64-gnu': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-linux-arm64-musl': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-linux-ppc64-gnu': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-linux-s390x-gnu': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-linux-x64-gnu': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-linux-x64-musl': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-openharmony-arm64': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-win32-arm64-msvc': [ '1.2.4' ],
+29 silly audit   '@rolldown/binding-win32-x64-msvc': [ '1.2.4' ],
+29 silly audit   '@rolldown/pluginutils': [ '1.0.1' ],
+29 silly audit   '@tailwindcss/cli': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/node': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/oxide': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/oxide-android-arm64': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/oxide-darwin-arm64': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/oxide-darwin-x64': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/oxide-freebsd-x64': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/oxide-linux-arm-gnueabihf': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/oxide-linux-arm64-gnu': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/oxide-linux-arm64-musl': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/oxide-linux-x64-gnu': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/oxide-linux-x64-musl': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/oxide-win32-arm64-msvc': [ '4.3.3' ],
+29 silly audit   '@tailwindcss/oxide-win32-x64-msvc': [ '4.3.3' ],
+29 silly audit   '@types/react': [ '19.2.18' ],
+29 silly audit   '@types/react-dom': [ '19.2.4' ],
+29 silly audit   '@vitejs/plugin-react': [ '6.0.5' ],
+29 silly audit   autoprefixer: [ '10.5.4' ],
+29 silly audit   'baseline-browser-mapping': [ '2.11.14' ],
+29 silly audit   braces: [ '3.0.3' ],
+29 silly audit   browserslist: [ '4.28.8' ],
+29 silly audit   'caniuse-lite': [ '1.0.30001809' ],
+29 silly audit   cookie: [ '1.1.1' ],
+29 silly audit   csstype: [ '3.2.3' ],
+29 silly audit   'detect-libc': [ '1.0.3', '2.1.2' ],
+29 silly audit   'electron-to-chromium': [ '1.5.407' ],
+29 silly audit   'enhanced-resolve': [ '5.24.5' ],
+29 silly audit   escalade: [ '3.2.0' ],
+29 silly audit   'fill-range': [ '7.1.1' ],
+29 silly audit   'fraction.js': [ '5.3.4' ],
+29 silly audit   fsevents: [ '2.3.3' ],
+29 silly audit   'graceful-fs': [ '4.2.11' ],
+29 silly audit   'is-extglob': [ '2.1.1' ],
+29 silly audit   'is-glob': [ '4.0.3' ],
+29 silly audit   'is-number': [ '7.0.0' ],
+29 silly audit   jiti: [ '2.7.0' ],
+29 silly audit   lightningcss: [ '1.32.0', '1.33.0' ],
+29 silly audit   'lightningcss-android-arm64': [ '1.32.0', '1.33.0' ],
+29 silly audit   'lightningcss-darwin-arm64': [ '1.32.0', '1.33.0' ],
+29 silly audit   'lightningcss-darwin-x64': [ '1.32.0', '1.33.0' ],
+29 silly audit   'lightningcss-freebsd-x64': [ '1.32.0', '1.33.0' ],
+29 silly audit   'lightningcss-linux-arm-gnueabihf': [ '1.32.0', '1.33.0' ],
+29 silly audit   'lightningcss-linux-arm64-gnu': [ '1.32.0', '1.33.0' ],
+29 silly audit   'lightningcss-linux-arm64-musl': [ '1.32.0', '1.33.0' ],
+29 silly audit   'lightningcss-linux-x64-gnu': [ '1.32.0', '1.33.0' ],
+29 silly audit   'lightningcss-linux-x64-musl': [ '1.32.0', '1.33.0' ],
+29 silly audit   'lightningcss-win32-arm64-msvc': [ '1.32.0', '1.33.0' ],
+29 silly audit   'lightningcss-win32-x64-msvc': [ '1.32.0', '1.33.0' ],
+29 silly audit   'magic-string': [ '0.30.21' ],
+29 silly audit   micromatch: [ '4.0.8' ],
+29 silly audit   mri: [ '1.2.0' ],
+29 silly audit   nanoid: [ '3.3.18' ],
+29 silly audit   'node-addon-api': [ '7.1.1' ],
+29 silly audit   'node-releases': [ '2.0.53' ],
+29 silly audit   oxlint: [ '1.78.0' ],
+29 silly audit   picocolors: [ '1.1.1' ],
+29 silly audit   picomatch: [ '2.3.2', '4.0.5' ],
+29 silly audit   postcss: [ '8.5.26' ],
+29 silly audit   'postcss-value-parser': [ '4.2.0' ],
+29 silly audit   react: [ '19.2.8' ],
+29 silly audit   'react-dom': [ '19.2.8' ],
+29 silly audit   'react-router': [ '7.18.2' ],
+29 silly audit   'react-router-dom': [ '7.18.2' ],
+29 silly audit   rolldown: [ '1.2.4' ],
+29 silly audit   scheduler: [ '0.27.0' ],
+29 silly audit   'set-cookie-parser': [ '2.7.2' ],
+29 silly audit   'source-map-js': [ '1.2.1' ],
+29 silly audit   tailwindcss: [ '4.3.3' ],
+29 silly audit   tapable: [ '2.3.3' ],
+29 silly audit   tinyglobby: [ '0.2.17' ],
+29 silly audit   fdir: [ '6.5.0' ],
+29 silly audit   'to-regex-range': [ '5.0.1' ],
+29 silly audit   'update-browserslist-db': [ '1.3.1' ],
+29 silly audit   vite: [ '8.2.1' ],
+29 silly audit   '@tailwindcss/postcss': [ '4.3.3' ],
+29 silly audit   '@alloc/quick-lru': [ '5.2.0' ],
+29 silly audit   '@tailwindcss/oxide-wasm32-wasi': [ '4.3.3' ]
+29 silly audit }
+30 verbose reify failed optional dependency /public/frontend/node_modules/lightningcss-win32-x64-msvc
+31 silly reify mark deleted [ '/public/frontend/node_modules/lightningcss-win32-x64-msvc' ]
+32 verbose reify failed optional dependency /public/frontend/node_modules/lightningcss-win32-arm64-msvc
+33 silly reify mark deleted [ '/public/frontend/node_modules/lightningcss-win32-arm64-msvc' ]
+34 verbose reify failed optional dependency /public/frontend/node_modules/lightningcss-linux-x64-musl
+35 silly reify mark deleted [ '/public/frontend/node_modules/lightningcss-linux-x64-musl' ]
+36 verbose reify failed optional dependency /public/frontend/node_modules/lightningcss-linux-x64-gnu
+37 silly reify mark deleted [ '/public/frontend/node_modules/lightningcss-linux-x64-gnu' ]
+38 verbose reify failed optional dependency /public/frontend/node_modules/lightningcss-linux-arm-gnueabihf
+39 silly reify mark deleted [ '/public/frontend/node_modules/lightningcss-linux-arm-gnueabihf' ]
+40 verbose reify failed optional dependency /public/frontend/node_modules/lightningcss-freebsd-x64
+41 silly reify mark deleted [ '/public/frontend/node_modules/lightningcss-freebsd-x64' ]
+42 verbose reify failed optional dependency /public/frontend/node_modules/lightningcss-darwin-x64
+43 silly reify mark deleted [ '/public/frontend/node_modules/lightningcss-darwin-x64' ]
+44 verbose reify failed optional dependency /public/frontend/node_modules/lightningcss-darwin-arm64
+45 silly reify mark deleted [ '/public/frontend/node_modules/lightningcss-darwin-arm64' ]
+46 verbose reify failed optional dependency /public/frontend/node_modules/lightningcss-android-arm64
+47 silly reify mark deleted [ '/public/frontend/node_modules/lightningcss-android-arm64' ]
+48 verbose reify failed optional dependency /public/frontend/node_modules/fsevents
+49 silly reify mark deleted [ '/public/frontend/node_modules/fsevents' ]
+50 verbose reify failed optional dependency /public/frontend/node_modules/@tailwindcss/oxide-win32-x64-msvc
+51 silly reify mark deleted [ '/public/frontend/node_modules/@tailwindcss/oxide-win32-x64-msvc' ]
+52 verbose reify failed optional dependency /public/frontend/node_modules/@tailwindcss/oxide-win32-arm64-msvc
+53 silly reify mark deleted [ '/public/frontend/node_modules/@tailwindcss/oxide-win32-arm64-msvc' ]
+54 verbose reify failed optional dependency /public/frontend/node_modules/@tailwindcss/oxide-linux-x64-musl
+55 silly reify mark deleted [ '/public/frontend/node_modules/@tailwindcss/oxide-linux-x64-musl' ]
+56 verbose reify failed optional dependency /public/frontend/node_modules/@tailwindcss/oxide-linux-x64-gnu
+57 silly reify mark deleted [ '/public/frontend/node_modules/@tailwindcss/oxide-linux-x64-gnu' ]
+58 verbose reify failed optional dependency /public/frontend/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf
+59 silly reify mark deleted [
+59 silly reify   '/public/frontend/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf'
+59 silly reify ]
+60 verbose reify failed optional dependency /public/frontend/node_modules/@tailwindcss/oxide-freebsd-x64
+61 silly reify mark deleted [ '/public/frontend/node_modules/@tailwindcss/oxide-freebsd-x64' ]
+62 verbose reify failed optional dependency /public/frontend/node_modules/@tailwindcss/oxide-darwin-x64
+63 silly reify mark deleted [ '/public/frontend/node_modules/@tailwindcss/oxide-darwin-x64' ]
+64 verbose reify failed optional dependency /public/frontend/node_modules/@tailwindcss/oxide-darwin-arm64
+65 silly reify mark deleted [ '/public/frontend/node_modules/@tailwindcss/oxide-darwin-arm64' ]
+66 verbose reify failed optional dependency /public/frontend/node_modules/@tailwindcss/oxide-android-arm64
+67 silly reify mark deleted [ '/public/frontend/node_modules/@tailwindcss/oxide-android-arm64' ]
+68 verbose reify failed optional dependency /public/frontend/node_modules/@rolldown/binding-win32-x64-msvc
+69 silly reify mark deleted [ '/public/frontend/node_modules/@rolldown/binding-win32-x64-msvc' ]
+70 verbose reify failed optional dependency /public/frontend/node_modules/@rolldown/binding-win32-arm64-msvc
+71 silly reify mark deleted [ '/public/frontend/node_modules/@rolldown/binding-win32-arm64-msvc' ]
+72 verbose reify failed optional dependency /public/frontend/node_modules/@rolldown/binding-openharmony-arm64
+73 silly reify mark deleted [ '/public/frontend/node_modules/@rolldown/binding-openharmony-arm64' ]
+74 verbose reify failed optional dependency /public/frontend/node_modules/@rolldown/binding-linux-x64-musl
+75 silly reify mark deleted [ '/public/frontend/node_modules/@rolldown/binding-linux-x64-musl' ]
+76 verbose reify failed optional dependency /public/frontend/node_modules/@rolldown/binding-linux-x64-gnu
+77 silly reify mark deleted [ '/public/frontend/node_modules/@rolldown/binding-linux-x64-gnu' ]
+78 verbose reify failed optional dependency /public/frontend/node_modules/@rolldown/binding-linux-s390x-gnu
+79 silly reify mark deleted [ '/public/frontend/node_modules/@rolldown/binding-linux-s390x-gnu' ]
+80 verbose reify failed optional dependency /public/frontend/node_modules/@rolldown/binding-linux-ppc64-gnu
+81 silly reify mark deleted [ '/public/frontend/node_modules/@rolldown/binding-linux-ppc64-gnu' ]
+82 verbose reify failed optional dependency /public/frontend/node_modules/@rolldown/binding-linux-arm-gnueabihf
+83 silly reify mark deleted [
+83 silly reify   '/public/frontend/node_modules/@rolldown/binding-linux-arm-gnueabihf'
+83 silly reify ]
+84 verbose reify failed optional dependency /public/frontend/node_modules/@rolldown/binding-freebsd-x64
+85 silly reify mark deleted [ '/public/frontend/node_modules/@rolldown/binding-freebsd-x64' ]
+86 verbose reify failed optional dependency /public/frontend/node_modules/@rolldown/binding-darwin-x64
+87 silly reify mark deleted [ '/public/frontend/node_modules/@rolldown/binding-darwin-x64' ]
+88 verbose reify failed optional dependency /public/frontend/node_modules/@rolldown/binding-darwin-arm64
+89 silly reify mark deleted [ '/public/frontend/node_modules/@rolldown/binding-darwin-arm64' ]
+90 verbose reify failed optional dependency /public/frontend/node_modules/@rolldown/binding-android-arm64
+91 silly reify mark deleted [ '/public/frontend/node_modules/@rolldown/binding-android-arm64' ]
+92 verbose reify failed optional dependency /public/frontend/node_modules/@parcel/watcher-win32-x64
+93 silly reify mark deleted [ '/public/frontend/node_modules/@parcel/watcher-win32-x64' ]
+94 verbose reify failed optional dependency /public/frontend/node_modules/@parcel/watcher-win32-ia32
+95 silly reify mark deleted [ '/public/frontend/node_modules/@parcel/watcher-win32-ia32' ]
+96 verbose reify failed optional dependency /public/frontend/node_modules/@parcel/watcher-win32-arm64
+97 silly reify mark deleted [ '/public/frontend/node_modules/@parcel/watcher-win32-arm64' ]
+98 verbose reify failed optional dependency /public/frontend/node_modules/@parcel/watcher-linux-x64-musl
+99 silly reify mark deleted [ '/public/frontend/node_modules/@parcel/watcher-linux-x64-musl' ]
+100 verbose reify failed optional dependency /public/frontend/node_modules/@parcel/watcher-linux-x64-glibc
+101 silly reify mark deleted [ '/public/frontend/node_modules/@parcel/watcher-linux-x64-glibc' ]
+102 verbose reify failed optional dependency /public/frontend/node_modules/@parcel/watcher-linux-arm-musl
+103 silly reify mark deleted [ '/public/frontend/node_modules/@parcel/watcher-linux-arm-musl' ]
+104 verbose reify failed optional dependency /public/frontend/node_modules/@parcel/watcher-linux-arm-glibc
+105 silly reify mark deleted [ '/public/frontend/node_modules/@parcel/watcher-linux-arm-glibc' ]
+106 verbose reify failed optional dependency /public/frontend/node_modules/@parcel/watcher-freebsd-x64
+107 silly reify mark deleted [ '/public/frontend/node_modules/@parcel/watcher-freebsd-x64' ]
+108 verbose reify failed optional dependency /public/frontend/node_modules/@parcel/watcher-darwin-x64
+109 silly reify mark deleted [ '/public/frontend/node_modules/@parcel/watcher-darwin-x64' ]
+110 verbose reify failed optional dependency /public/frontend/node_modules/@parcel/watcher-darwin-arm64
+111 silly reify mark deleted [ '/public/frontend/node_modules/@parcel/watcher-darwin-arm64' ]
+112 verbose reify failed optional dependency /public/frontend/node_modules/@parcel/watcher-android-arm64
+113 silly reify mark deleted [ '/public/frontend/node_modules/@parcel/watcher-android-arm64' ]
+114 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-win32-x64-msvc
+115 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-win32-x64-msvc' ]
+116 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-win32-ia32-msvc
+117 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-win32-ia32-msvc' ]
+118 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-win32-arm64-msvc
+119 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-win32-arm64-msvc' ]
+120 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-openharmony-arm64
+121 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-openharmony-arm64' ]
+122 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-linux-x64-musl
+123 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-linux-x64-musl' ]
+124 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-linux-x64-gnu
+125 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-linux-x64-gnu' ]
+126 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-linux-s390x-gnu
+127 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-linux-s390x-gnu' ]
+128 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-linux-riscv64-musl
+129 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-linux-riscv64-musl' ]
+130 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-linux-riscv64-gnu
+131 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-linux-riscv64-gnu' ]
+132 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-linux-ppc64-gnu
+133 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-linux-ppc64-gnu' ]
+134 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-linux-arm-musleabihf
+135 silly reify mark deleted [
+135 silly reify   '/public/frontend/node_modules/@oxlint/binding-linux-arm-musleabihf'
+135 silly reify ]
+136 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-linux-arm-gnueabihf
+137 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-linux-arm-gnueabihf' ]
+138 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-freebsd-x64
+139 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-freebsd-x64' ]
+140 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-darwin-x64
+141 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-darwin-x64' ]
+142 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-darwin-arm64
+143 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-darwin-arm64' ]
+144 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-android-arm64
+145 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-android-arm64' ]
+146 verbose reify failed optional dependency /public/frontend/node_modules/@oxlint/binding-android-arm-eabi
+147 silly reify mark deleted [ '/public/frontend/node_modules/@oxlint/binding-android-arm-eabi' ]
+148 verbose reify failed optional dependency /public/frontend/node_modules/vite/node_modules/lightningcss-win32-x64-msvc
+149 silly reify mark deleted [
+149 silly reify   '/public/frontend/node_modules/vite/node_modules/lightningcss-win32-x64-msvc'
+149 silly reify ]
+150 verbose reify failed optional dependency /public/frontend/node_modules/vite/node_modules/lightningcss-win32-arm64-msvc
+151 silly reify mark deleted [
+151 silly reify   '/public/frontend/node_modules/vite/node_modules/lightningcss-win32-arm64-msvc'
+151 silly reify ]
+152 verbose reify failed optional dependency /public/frontend/node_modules/vite/node_modules/lightningcss-linux-x64-musl
+153 silly reify mark deleted [
+153 silly reify   '/public/frontend/node_modules/vite/node_modules/lightningcss-linux-x64-musl'
+153 silly reify ]
+154 verbose reify failed optional dependency /public/frontend/node_modules/vite/node_modules/lightningcss-linux-x64-gnu
+155 silly reify mark deleted [
+155 silly reify   '/public/frontend/node_modules/vite/node_modules/lightningcss-linux-x64-gnu'
+155 silly reify ]
+156 verbose reify failed optional dependency /public/frontend/node_modules/vite/node_modules/lightningcss-linux-arm-gnueabihf
+157 silly reify mark deleted [
+157 silly reify   '/public/frontend/node_modules/vite/node_modules/lightningcss-linux-arm-gnueabihf'
+157 silly reify ]
+158 verbose reify failed optional dependency /public/frontend/node_modules/vite/node_modules/lightningcss-freebsd-x64
+159 silly reify mark deleted [
+159 silly reify   '/public/frontend/node_modules/vite/node_modules/lightningcss-freebsd-x64'
+159 silly reify ]
+160 verbose reify failed optional dependency /public/frontend/node_modules/vite/node_modules/lightningcss-darwin-x64
+161 silly reify mark deleted [
+161 silly reify   '/public/frontend/node_modules/vite/node_modules/lightningcss-darwin-x64'
+161 silly reify ]
+162 verbose reify failed optional dependency /public/frontend/node_modules/vite/node_modules/lightningcss-darwin-arm64
+163 silly reify mark deleted [
+163 silly reify   '/public/frontend/node_modules/vite/node_modules/lightningcss-darwin-arm64'
+163 silly reify ]
+164 verbose reify failed optional dependency /public/frontend/node_modules/vite/node_modules/lightningcss-android-arm64
+165 silly reify mark deleted [
+165 silly reify   '/public/frontend/node_modules/vite/node_modules/lightningcss-android-arm64'
+165 silly reify ]
+166 http cache @tailwindcss/postcss@https://registry.npmjs.org/@tailwindcss/postcss/-/postcss-4.3.3.tgz 1ms (cache hit)
+167 http cache @alloc/quick-lru@https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz 0ms (cache hit)
+168 silly tarball no local data for @tailwindcss/postcss@https://registry.npmjs.org/@tailwindcss/postcss/-/postcss-4.3.3.tgz. Extracting by manifest.
+169 silly tarball no local data for @alloc/quick-lru@https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz. Extracting by manifest.
+170 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 334ms
+171 silly audit report {}
+172 http fetch GET 200 https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz 545ms (cache miss)
+173 http fetch GET 200 https://registry.npmjs.org/@tailwindcss/postcss/-/postcss-4.3.3.tgz 567ms (cache miss)
+174 silly ADD node_modules/@alloc/quick-lru
+175 silly ADD node_modules/@tailwindcss/postcss
+176 silly ADD
+177 silly ADD
+178 silly ADD
+179 silly ADD
+180 silly ADD
+181 silly ADD
+182 silly ADD
+183 silly ADD
+184 silly ADD
+185 silly ADD
+186 silly ADD
+187 silly ADD
+188 silly ADD
+189 silly ADD
+190 silly ADD
+191 silly ADD
+192 silly ADD
+193 silly ADD
+194 silly ADD
+195 silly ADD
+196 silly ADD
+197 silly ADD
+198 silly ADD
+199 silly ADD
+200 silly ADD
+201 silly ADD
+202 silly ADD
+203 silly ADD
+204 silly ADD
+205 silly ADD
+206 silly ADD
+207 silly ADD
+208 silly ADD
+209 silly ADD
+210 silly ADD
+211 silly ADD
+212 silly ADD
+213 silly ADD
+214 silly ADD
+215 silly ADD
+216 silly ADD
+217 silly ADD
+218 silly ADD
+219 silly ADD
+220 silly ADD
+221 silly ADD
+222 silly ADD
+223 silly ADD
+224 silly ADD
+225 silly ADD
+226 silly ADD
+227 silly ADD
+228 silly ADD
+229 silly ADD
+230 silly ADD
+231 silly ADD
+232 silly ADD
+233 silly ADD
+234 silly ADD
+235 silly ADD
+236 silly ADD
+237 silly ADD
+238 silly ADD
+239 silly ADD
+240 silly ADD
+241 silly ADD
+242 silly ADD
+243 silly ADD
+244 silly ADD
+245 verbose cwd /public/frontend
+246 verbose os Linux 5.10.226-android12-9-00047-g4968e29b7f92-ab12786767
+247 verbose node v22.23.2
+248 verbose npm  v10.9.1
+249 verbose exit 0
+250 info ok
