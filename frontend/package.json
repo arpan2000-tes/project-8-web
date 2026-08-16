@@ -15,8 +15,11 @@
     "react-router-dom": "^7.18.2"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@tailwindcss/cli": "^4.3.3",
     "@tailwindcss/postcss": "^4.3.3",
+=======
+>>>>>>> 76a7f557306991dc787e9667485f22af4533c016
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
