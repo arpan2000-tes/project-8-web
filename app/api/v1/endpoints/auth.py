@@ -30,7 +30,7 @@ def sign_in(request: SignInSchema):
             return token
          else:
             raise HTTPException(status_code=400, detail="incorrect password")
-   raise HTTPException(status_code=400, detail="emailnl not reqistered")
+   raise HTTPException(status_code=400, detail="email not reqistered")
    
 @router.post("/authtest")
 def auth_test(decode: str = Depends(decode)):
