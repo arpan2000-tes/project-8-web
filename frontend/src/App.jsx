@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import SignUp from './pages/SignUp';
 
 // Fungsi sederhana untuk mengecek apakah user sudah punya token login
 const isAuthenticated = () => {
@@ -16,14 +17,15 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Rute Halaman Login (Halaman Utama) */}
+        {/* Rute untuk halaman Autentikasi */}
         <Route path="/" element={<Login />} />
-        
-        {/* Rute Halaman Dashboard (Dilindungi) */}
+        <Route path="/signup" element={<SignUp />} />
+
+        {/* Rute untuk halaman Dashboard dengan Proteksi */}
         <Route 
           path="/dashboard" 
           element={
@@ -35,6 +37,6 @@ function App() {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
