@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-import SignUp from './pages/SignUp';
+import VerifyOTP from './pages/VerifyOTP'
 
 // Fungsi sederhana untuk mengecek apakah user sudah punya token login
 const isAuthenticated = () => {
@@ -17,26 +17,14 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
-const App = () => {
+function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        {/* Rute untuk halaman Autentikasi */}
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-
-        {/* Rute untuk halaman Dashboard dengan Proteksi */}
-        <Route 
-          path="/dashboard" 
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          } 
-        />
+         <Route path></>
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;

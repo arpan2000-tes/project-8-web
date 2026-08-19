@@ -36,10 +36,10 @@ const SignUp = () => {
       const token = typeof data === 'string' ? data : data.token;
       
       localStorage.setItem('token', token);
-      alert('Registrasi Berhasil! Mengalihkan ke Dashboard...');
+      alert('Registrasi Berhasil! Silakan periksa email untuk kode OTP....');
       
       // Langsung pindah ke halaman dashboard
-      navigate('/dashboard'); 
+      navigate('/verify-otp'); 
 
     } catch (err) {
       setError(err.message);
