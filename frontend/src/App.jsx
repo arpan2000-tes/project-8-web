@@ -1,30 +1,38 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import VerifyOTP from './pages/VerifyOTP'
+import Login from './Login'; // Pastikan path import sesuai dengan struktur folder Anda
+import SignUp from './SignUp';
+import Dashboard from './Dashboard';
 
-// Fungsi sederhana untuk mengecek apakah user sudah punya token login
-const isAuthenticated = () => {
-  return localStorage.getItem('token') !== null;
-};
-
-// Komponen pelindung agar dashboard tidak bisa diakses tanpa login
+// Komponen Proteksi Rute (hanya bisa diakses jika sudah ada token)
 const ProtectedRoute = ({ children }) => {
-  if (!isAuthenticated()) {
-    return <Navigate to="/" />;
+  const token = localStorage.getItem('token');
+  if (!token) {
+    return <Navigate to="/" replace />;
   }
   return children;
 };
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-         <Route path></>
+        {/* Rute untuk halaman Autentikasi */}
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+
+        {/* Rute untuk halaman Dashboard dengan Proteksi */}
+        <Route 
+          path="/dashboard" 
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } 
+        />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
-}
+};
 
 export default App;
