@@ -13,23 +13,25 @@ const VerifyOTP = () => {
     setLoading(true);
 
     try {
-      // Mengambil JWT token yang disimpan saat proses SignUp
       const token = localStorage.getItem('token');
+      const savedEmail = localStorage.getItem('email'); // AMBIL EMAIL DARI STORAGE
       
-      if (!token) {
+      if (!token || !savedEmail) {
         throw new Error('Sesi tidak ditemukan. Silakan login atau daftar kembali.');
       }
 
-      // Sesuaikan URL endpoint dengan routing di FastAPI kamu
-      const response = await fetch('http://127.0.0.1:8000/api/v1/auth/verify-otp', {
+      const response = await fetch('http://127.0.0.1:8000/api/v1/auth/verifyOTP', { // Pastikan huruf besar-kecil endpoint cocok
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
           'X-API-KEY' : import.meta.env.VITE_API_KEY,
-          // Mengirim JWT sebagai Bearer token agar backend (PyOTP) bisa mengidentifikasi user
           'Authorization': `Bearer ${token}` 
         },
-        body: JSON.stringify({ otp }), // Mengirimkan kode OTP
+        // SESUAIKAN DENGAN SKEMA BACKEND (VerifyOTPSchema)
+        body: JSON.stringify({ 
+            email: savedEmail, 
+            otp_code: otp 
+        }), 
       });
 
       const data = await response.json();

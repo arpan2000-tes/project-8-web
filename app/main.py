@@ -4,6 +4,10 @@ from fastapi.security import APIKeyHeader
 from app.api.v1.routers import api_router
 import os
 from dotenv import load_dotenv
+from app.db.base import Base
+from app.db.session import Engine
+
+Base.metadata.create_all(bind=Engine)
 
 load_dotenv()
 API_KEY_SECRET = os.getenv("API_KEY")

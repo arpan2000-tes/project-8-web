@@ -36,6 +36,7 @@ const SignUp = () => {
       const token = typeof data === 'string' ? data : data.token;
       
       localStorage.setItem('token', token);
+      localStorage.setItem('email', email); // SIMPAN EMAIL JUGA UNTUK VERIFIKASI NANTI
       alert('Registrasi Berhasil! Silakan periksa email untuk kode OTP....');
       
       // Langsung pindah ke halaman dashboard
