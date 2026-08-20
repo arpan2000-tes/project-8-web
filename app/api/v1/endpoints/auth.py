@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 
 from app.api.deps import get_db
-from app.schemas.user import SignInSchema, SignUpSchema , VerifyOTPSchema
+from app.schemas.user import SignInSchema, SignUpSchema , VerifyOTPSchema, ResendOTPSchema
 from app.models.user import user as DBUser
 from app.core.security import (
    sign, decode, 
@@ -51,6 +51,12 @@ def sign_in(request: SignInSchema, db: Session = Depends(get_db)):
    if  user.password != request.password:
       raise HTTPException(status_code=400, detail="incorrect password")
    
+   if not user.is_verified:
+      raise HTTPException(
+         status_code=403, 
+         detail="Akun Anda belum diverifikasi. Silakan lakukan verifikasi OTP terlebih dahulu."
+      )
+   
    token = sign(user.email)
    return {"token": token}
    
@@ -60,7 +66,6 @@ def auth_test(decode: str = Depends(decode)):
 
 @router.post("/verifyOTP")
 def verify_otp(request: VerifyOTPSchema, db: Session = Depends(get_db)):
-   # 1. Cari user berdasarkan email
    user = db.query(DBUser).filter(DBUser.email == request.email).first()
    if not user:
       raise HTTPException(status_code=404, detail="User not found")
@@ -68,15 +73,32 @@ def verify_otp(request: VerifyOTPSchema, db: Session = Depends(get_db)):
    if user.is_verified:
       return {"message": "User is already verified"}
 
-   # 2. Verifikasi kode OTP dari frontend dengan otp_secret dari database
    is_valid = verify_otp_code(user.otp_secret, request.otp_code)
    
    if not is_valid:
       raise HTTPException(status_code=400, detail="Invalid or expired OTP code")
-   
-   # 3. Jika benar, ubah status user
+
    user.is_verified = True
    user.otp_secret = None
    db.commit()
    
    return {"message": "Email verified successfully!"}
+
+@router.post("/resendOTP")
+def resend_otp(request: ResendOTPSchema, db: Session = Depends(get_db)):
+   user = db.query(DBUser).filter(DBUser.email == request.email).first()
+   if not user:
+      raise HTTPException(status_code=404, detail="User tidak ditemukan")
+   
+   if user.is_verified:
+      raise HTTPException(status_code=400, detail="Akun sudah terverifikasi")
+
+   # Buat secret baru jika kosong, lalu generate kode baru
+   if not user.otp_secret:
+      user.otp_secret = generate_otp_secret()
+      
+   code_to_send = generate_otp_code(user.otp_secret)
+   send_otp_email(receiver_email=user.email, otp_code=code_to_send)
+   
+   db.commit()
+   return {"message": "Kode OTP baru telah berhasil dikirim ke email kamu."}

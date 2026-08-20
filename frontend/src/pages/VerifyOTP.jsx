@@ -1,54 +1,104 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const VerifyOTP = () => {
   const [otp, setOtp] = useState('');
   const [error, setError] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
   const [loading, setLoading] = useState(false);
+  const [resendLoading, setResendLoading] = useState(false);
+  const [timer, setTimer] = useState(60); // Timer mundur 60 detik untuk resend
   const navigate = useNavigate();
+
+  // Effect untuk timer mundur
+  useEffect(() => {
+    let interval = null;
+    if (timer > 0) {
+      interval = setInterval(() => setTimer((prev) => prev - 1), 1000);
+    } else {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [timer]);
 
   const handleVerify = async (e) => {
     e.preventDefault();
     setError('');
+    setSuccessMsg('');
     setLoading(true);
 
     try {
       const token = localStorage.getItem('token');
-      const savedEmail = localStorage.getItem('email'); // AMBIL EMAIL DARI STORAGE
+      const savedEmail = localStorage.getItem('email');
       
-      if (!token || !savedEmail) {
+      if (!savedEmail) {
         throw new Error('Sesi tidak ditemukan. Silakan login atau daftar kembali.');
       }
 
-      const response = await fetch('http://127.0.0.1:8000/api/v1/auth/verifyOTP', { // Pastikan huruf besar-kecil endpoint cocok
+      const response = await fetch('http://127.0.0.1:8000/api/v1/auth/verifyOTP', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'X-API-KEY' : import.meta.env.VITE_API_KEY,
+          'X-API-KEY': import.meta.env.VITE_API_KEY,
           'Authorization': `Bearer ${token}` 
         },
-        // SESUAIKAN DENGAN SKEMA BACKEND (VerifyOTPSchema)
         body: JSON.stringify({ 
-            email: savedEmail, 
-            otp_code: otp 
+          email: savedEmail, 
+          otp_code: otp 
         }), 
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.detail || 'Kode OTP salah atau kadaluarsa. Silakan coba lagi.');
+        throw new Error(data.detail || 'Kode OTP salah atau kadaluarsa.');
       }
 
       alert('Verifikasi Berhasil! Akun kamu sudah aktif.');
-      
-      // Jika berhasil verifikasi, baru pindahkan user ke dashboard
       navigate('/dashboard'); 
 
     } catch (err) {
       setError(err.message);
     } finally {
       setLoading(false);
+    }
+  };
+
+  // FUNGSI UNTUK KIRIM ULANG OTP
+  const handleResendOTP = async () => {
+    if (timer > 0) return;
+    
+    setError('');
+    setSuccessMsg('');
+    setResendLoading(true);
+
+    try {
+      const savedEmail = localStorage.getItem('email');
+      if (!savedEmail) {
+        throw new Error('Email tidak ditemukan. Silakan daftar kembali.');
+      }
+
+      const response = await fetch('http://127.0.0.1:8000/api/v1/auth/resendOTP', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'X-API-KEY': import.meta.env.VITE_API_KEY,
+        },
+        body: JSON.stringify({ email: savedEmail }), 
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.detail || 'Gagal mengirim ulang OTP.');
+      }
+
+      setSuccessMsg('Kode OTP baru berhasil dikirim ke email kamu!');
+      setTimer(60); // Reset timer ke 60 detik
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setResendLoading(false);
     }
   };
 
@@ -66,6 +116,12 @@ const VerifyOTP = () => {
           </div>
         )}
 
+        {successMsg && (
+          <div className="mb-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded-md text-sm text-center">
+            {successMsg}
+          </div>
+        )}
+
         <form onSubmit={handleVerify}>
           <div className="mb-6">
             <input
@@ -73,11 +129,10 @@ const VerifyOTP = () => {
               type="text" 
               value={otp}
               onChange={(e) => {
-                // Memastikan hanya angka yang bisa diinput dan maksimal 6 digit (standar PyOTP)
                 const value = e.target.value.replace(/\D/g, '');
                 if (value.length <= 6) setOtp(value);
               }}
-              className="w-full px-4 py-3 text-center text-2xl tracking-widest border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+              className="w-full px-4 py-3 text-center text-2xl tracking-widest border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
               placeholder="••••••" 
               required
             />
@@ -86,14 +141,26 @@ const VerifyOTP = () => {
           <button
             type="submit" 
             disabled={loading || otp.length < 6}
-            className="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 disabled:opacity-50 transition duration-200"
+            className="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none disabled:opacity-50 transition duration-200"
           >
             {loading ? 'Memverifikasi...' : 'Verifikasi Akun'}
           </button>
         </form>
         
         <p className="mt-6 text-center text-sm text-gray-600">
-          Belum menerima kode? <button className="text-blue-600 hover:underline">Kirim ulang</button>
+          Belum menerima kode?{' '}
+          <button 
+            type="button"
+            onClick={handleResendOTP}
+            disabled={timer > 0 || resendLoading}
+            className="text-blue-600 font-semibold hover:underline disabled:text-gray-400 disabled:no-underline"
+          >
+            {resendLoading 
+              ? 'Mengirim...' 
+              : timer > 0 
+                ? `Kirim ulang (${timer}s)` 
+                : 'Kirim ulang'}
+          </button>
         </p>
       </div>
     </div>

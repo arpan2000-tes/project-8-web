@@ -40,7 +40,7 @@ const SignUp = () => {
       alert('Registrasi Berhasil! Silakan periksa email untuk kode OTP....');
       
       // Langsung pindah ke halaman dashboard
-      navigate('/verify-otp'); 
+      navigate('/VerifyOTP'); 
 
     } catch (err) {
       setError(err.message);

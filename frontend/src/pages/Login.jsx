@@ -23,6 +23,14 @@ const Login = () => {
       const data = await response.json();
 
       if (!response.ok) {
+        if (response.status === 403) {
+          // Simpan email ke local storage agar bisa digunakan oleh halaman VerifyOTP
+          localStorage.setItem('email', email); 
+          
+          alert('Akun kamu belum diverifikasi. Mengalihkan ke halaman OTP...');
+          navigate('/verifyOTP'); // Pindahkan ke halaman OTP
+          return; // Hentikan fungsi sampai di sini agar tidak masuk ke blok throw new Error
+        } 
         throw new Error(data.detail || 'Login gagal, periksa email dan password.');
       }
 

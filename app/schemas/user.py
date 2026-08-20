@@ -12,3 +12,6 @@ class SignInSchema(BaseModel):
 class VerifyOTPSchema(BaseModel):
     email: EmailStr
     otp_code: str
+    
+class ResendOTPSchema(BaseModel):
+    email: EmailStr
