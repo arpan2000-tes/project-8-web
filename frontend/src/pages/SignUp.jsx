@@ -19,7 +19,7 @@ const SignUp = () => {
       const response = await fetch('http://127.0.0.1:8000/api/v1/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json',
-          'X-API-KEY' : import.meta.env.VITE_API_KEY
+          
          },
         body: JSON.stringify({ name, email, password }),
       });

@@ -15,7 +15,7 @@ async def verify_api_key(api_key: str = Security(API_KEY_HEADER)):
         raise HTTPException (status_code=403, detail="akses ditolak: api key tidak valid")
     return api_key
 
-app = FastAPI(dependencies=[Depends(verify_api_key)])
+app = FastAPI()
 
 origin = [
    "http://localhost:5173",

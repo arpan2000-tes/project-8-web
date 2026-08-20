@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './Login'; // Pastikan path import sesuai dengan struktur folder Anda
-import SignUp from './SignUp';
-import Dashboard from './Dashboard';
+import Login from './pages/Login'; // Pastikan path import sesuai dengan struktur folder Anda
+import SignUp from './pages/SignUp';
+import Dashboard from './pages/Dashboard';
 
 // Komponen Proteksi Rute (hanya bisa diakses jika sudah ada token)
 const ProtectedRoute = ({ children }) => {
